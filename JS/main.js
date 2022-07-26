@@ -1,22 +1,16 @@
-function solution(n, m) {
-  var answer = [];
-  let gcd = 1;
-  let lcm = 1;
-
-  for(let i=2; i<=Math.min(n, m); i++){   // 최대공약수 구하기
-    if(n % i === 0 && m % i === 0){
-        gcd = i;
+function solution(num) {
+  var answer = 0;
+  while(num != 1) {
+    if(num%2 == 0) {
+      num = num/2;
     }
-  }
-   
-  while(true){                          // 최소공배수 구하기
-    if((lcm % num1 == 0) && (lcm % num2 == 0)){
-      break;
+    else{
+      num = num*3 + 1;
     }
-    lcm++;
+    ++answer;
   }
-  answer.push(gcd);             // 배열에 값 추가
-  answer.push(lcm);
+  if(answer >= 500) {
+    answer = -1;
+  }
   return answer;
 }
-
